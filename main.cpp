@@ -1,17 +1,5 @@
 #include <iostream>
-#include <stdio.h>
-#include <cstdlib>
-// #include <conio.h>
-// #include <windows.h>
-#include <iomanip>
-
-
-std::string login, password;
-float       firstNumberCalc, secondNumberCalc;
-char        pick, choose, fibo;
-double long fib[100000];
-int         n;
-
+#include <thread>
 
 void menu()
 {
@@ -28,23 +16,38 @@ void menu()
 
 int main()
 {
-    std::cout << "Welcome!" << std::endl;
-    std::cout << "Login: ";
-    std::cin >> login;
-    std::cout << std::endl << "Password: ";
-    std::cin >> password;
-
     int loginAttempts = 0;
+    bool shouldContinueRunning = true;
 
-    while(loginAttempts < 3)
+    std::string login, password;
+
+    std::cout << "Welcome!" << std::endl;
+
+    while (shouldContinueRunning && loginAttempts < 3)
     {
+        std::cout << "Login: ";
+        std::cin >> login;
+        std::cout << "Password: ";
+        std::cin >> password;
+
         if (login == "michal" && password == "behemoth")
         {
-
+            std::cout << "Hello Michal! Your secret data are safe here." << std::endl;
+            shouldContinueRunning = false;
         }
         else
         {
-            std::cout << "Wrong login or password! Try Again!";
+            loginAttempts++;
+            if (loginAttempts != 3)
+            {
+                std::cout << "Wrong login or password! Try Again!" << std::endl;
+            }
+            else
+            {
+                std::cout << "You are not allowed to use this program!" << std::endl;
+                std::cout << "This program is going to quit in 5 sec!" << std::endl;
+                std::this_thread::sleep_for(std::chrono::seconds(5));
+            }
         }
     }
 
