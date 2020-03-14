@@ -1,8 +1,10 @@
 #include <iostream>
 #include <thread>
 
-void menu()
+int mainMenu()
 {
+    int userChoice;
+
     std::cout << std::endl;
     std::cout << std::endl;
     std::cout << "MAIN MENU" << std::endl;
@@ -12,6 +14,10 @@ void menu()
     std::cout << "3. Golden number" << std::endl;
     std::cout << "4. ICBM" << std::endl;
     std::cout << "5. Exit" << std::endl;
+    std::cout << "Your choice: ";
+
+    std::cin >> userChoice;
+    return userChoice;
 };
 
 int main()
@@ -32,8 +38,11 @@ int main()
 
         if (login == "michal" && password == "behemoth")
         {
-            std::cout << "Hello Michal! Your secret data are safe here." << std::endl;
-            shouldContinueRunning = false;
+            while(shouldContinueRunning)
+            {
+
+                shouldContinueRunning = false;
+            }
         }
         else
         {
