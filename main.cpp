@@ -74,6 +74,7 @@ int main()
 
         if (login == "michal" && password == "behemoth")
         {
+            // TODO: With `*` think about a way to make main() take less than 40-50 lines
             while (shouldContinueRunning)
             {
                 int choice = mainMenu();
@@ -83,6 +84,7 @@ int main()
                     case 1:
                     {
                         int userCalcOperation = calcMenu();
+                        // TODO: Fix this, so selecting `5` will not result in "Wrong option!"
                         if(choice < 5)
                         {
                             calculatorLogic(userCalcOperation);
@@ -93,6 +95,7 @@ int main()
 
                     }
                         break;
+                        // TODO: Finish those cases, so they are functional
                         // case 2: {} break;
                         // case 3: {} break;
                         // case 4: {} break;
