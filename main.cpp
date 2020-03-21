@@ -45,42 +45,66 @@ void calculatorLogic(int operationType)
     std::cout << "Please give two numbers: ";
     std::cin >> firstNumber >> secondNumber;
 
-    switch(operationType)
+    switch (operationType)
     {
-        case 1: operationResult = firstNumber + secondNumber; break;
-        case 2: operationResult = firstNumber - secondNumber; break;
-        case 3: operationResult = firstNumber * secondNumber; break;
-        case 4: if (secondNumber == 0) std::cout << "Divisioning by zero causing tragic death! It's your last chance! \n\n";
-                else operationResult = firstNumber / secondNumber; break;
-        case 5: mainMenu(); break;
+        case 1:
+            operationResult = firstNumber + secondNumber;
+            break;
+        case 2:
+            operationResult = firstNumber - secondNumber;
+            break;
+        case 3:
+            operationResult = firstNumber * secondNumber;
+            break;
+        case 4:
+            if (secondNumber == 0)
+            {
+                std::cout << "Dividing by zero causing tragic death! It's your last chance! \n\n";
+            }
+            else
+            {
+                operationResult = firstNumber / secondNumber;
+            }
+            break;
     }
+
     std::cout << "Operation result is: " << operationResult << std::endl;
+    std::cout << "Press ENTER to continue" << std::endl;
+    getchar();
+    getchar();
+}
 
-        int choice = mainMenu();
-    }
 
-
-void Fibonacci()
+void fibonacci()
 {
-int n; double long  fib[100000];
-std::cout << "Fibonacci's number: \n\n";
-std::cin >> n;
+    int n;
+    std::cout << "Fibonacci's number: \n\n";
+    std::cin >> n;
+    double long fib[n];
     {
+
         fib[0] = 1;
         fib[1] = 1;
 
-        for (int i = 2; i < n; i++)
+        auto     start = std::chrono::system_clock::now();
+        for (int i     = 2; i < n; i++)
         {
             fib[i] = fib[i - 1] + fib[i - 2];
         }
-        std::cout << "Fibonacci number " << n << ": " << fib[n - 1];
+        auto     end   = std::chrono::system_clock::now();
+        std::cout
+            << "Fibonacci number " << n
+            << ", in " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()
+            << " milliseconds : "
+            << std::fixed << fib[n - 1] << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(2));
     }
 }
 
 void goldenNumber()
 {
-    int n; double long fib[100000];
+    int         n;
+    double long fib[100000];
     {
         std::cout << "Fibonacci's number: ";
         std::cin >> n;
@@ -91,40 +115,40 @@ void goldenNumber()
         {
             fib[i] = fib[i - 1] + fib[i - 2];
         }
-        std::cout<<"Golden number: "<<fib[n-1]/fib[n-2];
+        std::cout << "Golden number: " << fib[n - 1] / fib[n - 2] << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(2));
     }
-    mainMenu();
 }
 
-void ICBM()
+void launchIcbm()
 {
     std::string nuclearAnnihilation;
     {
-        std::cout << "Do you wont to lunch ICBM?\n\n";
+        std::cout << "Do you wont to lunch ICBM?\n" << std::endl;
         std::cin >> nuclearAnnihilation;
 
         if (nuclearAnnihilation == "yes")
         {
             std::this_thread::sleep_for(std::chrono::seconds(5));
-            std::cout << "ICBM lunched! Wait for Annihilation of Sosnowiec!\n\n";
+            std::cout << "ICBM lunched! Wait for Annihilation of Sosnowiec!\n" << std::endl;
             std::this_thread::sleep_for(std::chrono::seconds(2));
         }
 
         if (nuclearAnnihilation == "no")
         {
-            std::cout << "Seriously? Nuclear annihilation is quite good option for Sosnowiec!\n\n";
+            std::cout << "Seriously? Nuclear annihilation is quite good option for Sosnowiec!\n" << std::endl;
             std::this_thread::sleep_for(std::chrono::seconds(5));
-            std::cout << "I was joking! There is no other option than " "yes\n\n";
+            std::cout << "I was joking! There is no other option than " "yes\n" << std::endl;
             std::this_thread::sleep_for(std::chrono::seconds(5));
-            std::cout << "ICBM lunched! Wait for Annihilation of Sosnowiec!\n\n";
+            std::cout << "ICBM lunched! Wait for Annihilation of Sosnowiec!\n" << std::endl;
             std::this_thread::sleep_for(std::chrono::seconds(2));
         }
     }
 }
-int main(){
-    int  loginAttempts         = 0;
-    bool shouldContinueRunning = true;
+int main()
+{
+    int         loginAttempts         = 0;
+    bool        shouldContinueRunning = true;
     std::string login, password;
     std::cout << "Welcome!" << std::endl;
 
@@ -136,24 +160,54 @@ int main(){
         std::cin >> password;
 
         if (login == "michal" && password == "behemoth")
-        { // TODO: With `*` think about a way to make main() take less than 40-50 lines
+        {
             while (shouldContinueRunning)
             {
                 int choice = mainMenu();
-                    switch (choice)
+                switch (choice)
                 {
-                    case 1: {
-                            int userCalcOperation = calcMenu();  // TODO: Fix this, so selecting `5` will not result in "Wrong option!"
-                            if (choice <= 5)
-                            {
-                                calculatorLogic(userCalcOperation);
-                                std::this_thread::sleep_for(std::chrono::seconds(2));
-                            } else std::cout << "Wrong option!" << std::endl;
-                            }                                break;
-                    case 2: {Fibonacci();}                   break;
-                    case 3: {goldenNumber();}                break;
-                    case 4: {ICBM();}                        break;
-                    case 5: {shouldContinueRunning = false;} break; default: break;
+                    case 1:
+                    {
+                        int userCalcOperation = calcMenu();
+                        if (userCalcOperation < 5)
+                        {
+                            calculatorLogic(userCalcOperation);
+                            std::this_thread::sleep_for(std::chrono::seconds(2));
+                        }
+                        else if (userCalcOperation == 5)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            std::cout << "Wrong option!" << std::endl;
+                        }
+                    }
+                        break;
+                    case 2:
+                    {
+                        fibonacci();
+                    }
+                        break;
+                    case 3:
+                    {
+                        goldenNumber();
+                    }
+                        break;
+                    case 4:
+                    {
+                        launchIcbm();
+                    }
+                        break;
+                    case 5:
+                    {
+                        shouldContinueRunning = false;
+                    }
+                        break;
+                    default:
+                    {
+                        std::cout << "Wrong choice" << std::endl;
+                    }
                 }
             }
         }
@@ -172,6 +226,7 @@ int main(){
             }
         }
     }
-    std::cout << "\n\nProgram shutdown successful.\nYou have been logged out.\n\n\t\t\tThank you for your cooperation!" << std::endl;
+    std::cout << "\n\nProgram shutdown successful.\nYou have been logged out.\n\n\t\t\tThank you for your cooperation!"
+              << std::endl;
     return 0;
 }
