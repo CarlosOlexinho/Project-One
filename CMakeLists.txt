@@ -1,0 +1,7 @@
+CMAKE_MINIMUM_REQUIRED( VERSION 3.15 )
+PROJECT( Project_One )
+
+SET( CMAKE_CXX_STANDARD 14 )
+
+ADD_EXECUTABLE( Project_One
+				main.cpp )
