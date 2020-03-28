@@ -5,15 +5,28 @@
 #ifndef PROJECT_ONE_ROCKETLAUNCHER_HXX
 #define PROJECT_ONE_ROCKETLAUNCHER_HXX
 
-#include "../interface/IRocketLauncher.hxx"
+#include "../../interface/IRocketLauncher.hxx"
 
 class RocketLauncher
         : public IRocketLauncher
 {
 public:
-    char Rocket(char name, char time, char distance, char target) override;
-    char prepare (char yes, char no) override ;
-    char launch (char start) override;
+
+    /***
+     * @brief Prompts user about system details (what type of rocket, what time of launch etc.)
+     */
+    void prepareToLaunch() override;
+
+    /***
+     * @brief Prompts user about readiness to launch and collects user confirmation (should launch, or not)
+     * @return if user accepted the launch
+     */
+    bool shouldLaunch() override;
+
+    /***
+     * @brief launches the rocket
+     */
+    void launch() override;
 };
 
 

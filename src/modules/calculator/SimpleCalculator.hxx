@@ -6,7 +6,7 @@
 #define PROJECT_ONE_SIMPLECALCULATOR_HXX
 
 
-#include "../interface/ICalculator.hxx"
+#include "../../interface/ICalculator.hxx"
 
 class SimpleCalculator
     : public ICalculator

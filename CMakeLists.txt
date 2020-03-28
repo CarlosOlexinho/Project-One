@@ -3,5 +3,21 @@ PROJECT( Project_One )
 
 SET( CMAKE_CXX_STANDARD 14 )
 
-ADD_EXECUTABLE( Project_One
-				src/main.cpp src/modules/calculator/SimpleCalculator.cxx src/modules/calculator/SimpleCalculator.hxx src/modules/interface/ICalculator.hxx src/modules/interface/IYieldValue.hxx src/modules/interface/IRocketLauncher.hxx src/modules/RocketLauncher/RocketLauncher.cxx src/modules/RocketLauncher/RocketLauncher.hxx src/modules/YieldValue.cxx src/modules/YieldValue.hxx)
+ADD_EXECUTABLE(
+		Project_One
+		
+		src/main.cpp
+		
+		# Interfaces
+		src/interface/ICalculator.hxx
+		src/interface/IYieldValue.hxx
+		src/interface/IRocketLauncher.hxx
+		
+		# Headers
+		src/modules/calculator/SimpleCalculator.hxx
+		src/modules/RocketLauncher/RocketLauncher.hxx
+		
+		# Sources
+		src/modules/calculator/SimpleCalculator.cxx
+		src/modules/RocketLauncher/RocketLauncher.cxx
+		src/modules/Fibonnacci/Fibonacci.cxx src/modules/Fibonnacci/Fibonacci.hxx src/modules/GoldenNumber/GoldenNumber.cxx src/modules/GoldenNumber/GoldenNumber.hxx )
