@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include "modules/calculator/SimpleCalculator.hxx"
 #include "modules/interface/IYieldValue.hxx"
@@ -10,8 +8,7 @@ int main(int argc, char** args)
     ICalculator* calculator = new SimpleCalculator;
     IYieldValue* fibonacci;                 // @TODO Create Fibonacci class which will implement interface -> IYieldValue
     IYieldValue* goldenNumber;              // @TODO Create GoldenNumber class which will implement interface -> IYieldValue
-    IRocketLauncher* icbmLauncher;          // @TODO Create IcbmLauncher class which will implement interface -> IRocketLauncher
-
+    IRocketLauncher* icbmLauncher;        // @TODO Create IcbmLauncher class which will implement interface -> IRocketLauncher
     ICalculator* newWorldCalculator;        // @TODO Create NewWorldCalculator class which will implement interface -> ICalculator
                                             //      Note: Adding is subtracting, multiplying is dividing.
     /*
