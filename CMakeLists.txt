@@ -8,16 +8,7 @@ ADD_EXECUTABLE(
 		
 		src/main.cpp
 		
-		# Interfaces
-		src/interface/ICalculator.hxx
-		src/interface/IYieldValue.hxx
-		src/interface/IRocketLauncher.hxx
-		
-		# Headers
-		src/modules/calculator/SimpleCalculator.hxx
-		src/modules/RocketLauncher/RocketLauncher.hxx
-		
-		# Sources
-		src/modules/calculator/SimpleCalculator.cxx
-		src/modules/RocketLauncher/RocketLauncher.cxx
-        src/modules/Fibonacci/Fibonacci.cxx src/modules/Fibonacci/Fibonacci.hxx src/modules/GoldenNumber/GoldenNumber.cxx src/modules/GoldenNumber/GoldenNumber.hxx src/modules/WeirdCalculator/WeirdCalculator.cxx src/modules/WeirdCalculator/WeirdCalculator.hxx)
+		src/interface/IUnit.hxx
+		src/monster/Monster.cxx
+		src/monster/Monster.hxx
+)

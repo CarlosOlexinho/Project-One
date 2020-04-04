@@ -24,13 +24,43 @@ Grading scale is going to have 5 values, from 1 to 5:
 
 ## Known issues
 
--   not **LEARN**ing
+-   
 
 ## To Remember
 
--   **LEARN**
+-   
 
 ## Lesson log
+
+### Lesson 2
+
+*Saturday, 4th of April*
+
+#### Previous lesson mistakes
+
+-   Always keep an eye on includes.
+-   _Interface_ should **always be perfectly reflected** in implementing class!
+-   Don't add `/` in first place of include... It's just pointing to "root" directory
+
+
+
+#### This lesson overview
+
+N/A
+
+#### Homework
+
+-   [ ] 
+
+
+
+#### Literature (worth reading)
+
+-   [ ] 
+
+#### Tasks
+
+-   [ ] 
 
 ### Lesson 1
 
@@ -50,19 +80,19 @@ N/A
 
 #### Homework
 
--   [ ] Finish the last assignment
--   [ ] Make first page of tasks from [here](https://learngitbranching.js.org/)
--   [ ] Read about markdown [here](https://guides.github.com/features/mastering-markdown/)
--   [ ] Download [typora](https://guides.github.com/features/mastering-markdown/)
+-   [x] Finish the last assignment
+-   [x] Make first page of tasks from [here](https://learngitbranching.js.org/)
+-   [x] Read about markdown [here](https://guides.github.com/features/mastering-markdown/)
+-   [x] Download [typora](https://guides.github.com/features/mastering-markdown/)
 
 
 
 #### Literature (worth reading)
 
--   [ ] https://www.wikiwand.com/pl/Interfejs_(programowanie_obiektowe
+-   [x] https://www.wikiwand.com/pl/Interfejs_(programowanie_obiektowe)
 
 #### Tasks
 
--   [ ] https://learngitbranching.js.org/ (Not **ALL** NECESSARY for next meeting)
--   [ ] https://guides.github.com/features/mastering-markdown/
--   [ ] https://typora.io/
+-   [x] https://learngitbranching.js.org/ (Not **ALL** NECESSARY for next meeting)
+-   [x] https://guides.github.com/features/mastering-markdown/
+-   [x] https://typora.io/
