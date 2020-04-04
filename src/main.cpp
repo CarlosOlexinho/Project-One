@@ -3,6 +3,9 @@
 #include "modules/calculator/SimpleCalculator.hxx"
 #include "interface/IYieldValue.hxx"
 #include "modules/RocketLauncher/RocketLauncher.hxx"
+#include "modules/Fibonacci/Fibonacci.hxx"
+#include "modules/GoldenNumber/GoldenNumber.hxx"
+#include "modules/WeirdCalculator/WeirdCalculator.hxx"
 
 int main(int argc, char** args)
 {

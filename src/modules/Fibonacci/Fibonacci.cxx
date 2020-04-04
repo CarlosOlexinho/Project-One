@@ -4,11 +4,8 @@
 #include <iostream>
 #include "Fibonacci.hxx"
 
-float Fibonacci::getValue()
+float Fibonacci::getValue(int n)
 {
-    int n;
-    std::cout << "Fibonacci's number: \n\n";
-    std::cin >> n;
     double long fib[n];
     {
         fib[0] = 1;
@@ -18,10 +15,5 @@ float Fibonacci::getValue()
         {
             fib[i] = fib[i - 1] + fib[i - 2];
         }
-
-        std::cout
-                << "Fibonacci number " << n
-                << std::fixed << fib[n - 1] << std::endl;
-
     }
 }

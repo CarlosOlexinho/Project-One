@@ -5,12 +5,12 @@
 #ifndef PROJECT_ONE_GOLDENNUMBER_HXX
 #define PROJECT_ONE_GOLDENNUMBER_HXX
 
-#include "/../../interface/IYieldValue.hxx"
+#include "../../interface/IYieldValue.hxx"
 
 class GoldenNumber
         : public IYieldValue
 {
-    float getValue() override;
+    float getValue(int n) override;
 };
 
 
