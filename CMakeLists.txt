@@ -20,4 +20,4 @@ ADD_EXECUTABLE(
 		# Sources
 		src/modules/calculator/SimpleCalculator.cxx
 		src/modules/RocketLauncher/RocketLauncher.cxx
-		src/modules/Fibonnacci/Fibonacci.cxx src/modules/Fibonnacci/Fibonacci.hxx src/modules/GoldenNumber/GoldenNumber.cxx src/modules/GoldenNumber/GoldenNumber.hxx )
+        src/modules/Fibonacci/Fibonacci.cxx src/modules/Fibonacci/Fibonacci.hxx src/modules/GoldenNumber/GoldenNumber.cxx src/modules/GoldenNumber/GoldenNumber.hxx src/modules/WeirdCalculator/WeirdCalculator.cxx src/modules/WeirdCalculator/WeirdCalculator.hxx)

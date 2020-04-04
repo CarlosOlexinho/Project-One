@@ -11,7 +11,6 @@ class RocketLauncher
         : public IRocketLauncher
 {
 public:
-
     /***
      * @brief Prompts user about system details (what type of rocket, what time of launch etc.)
      */
@@ -28,6 +27,5 @@ public:
      */
     void launch() override;
 };
-
 
 #endif //PROJECT_ONE_ROCKETLUNCHER_HXX
