@@ -19,7 +19,7 @@ Grading scale is going to have 5 values, from 1 to 5:
 -   **2 ->** Considerable effort
 -   **3 ->** OK... I guess?
 -   **4 ->** Very Good
--   **5->**  Fully understands topic
+-   **5 ->**  Fully understands topic
 -   **S ->** Is ready to roll (**SUPERB**)
 
 ## Known issues
