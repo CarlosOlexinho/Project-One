@@ -5,37 +5,38 @@
 #include <iostream>
 #include "Monster.hxx"
 
-void Monster::takeDamage(double enemyDamage, double enemyPenetration, IUnit::DamageType attackDamageType)
-{
-    health -= enemyDamage * (1-(resistanceMapping[attackDamageType]-enemyPenetration));
-    std::cout << "Unit has " << health << " health" << std::endl;
-}
-double Monster::getDamage()
-{
-    return this->damage;
-}
-double Monster::getPenetration()
-{
-    return this->penetration;
-}
-IUnit::DamageType Monster::getDamageType()
-{
-    return this->damageType;
-}
 Monster::Monster(double maxHealth
                  , double damage
                  , double penetration
                  , IUnit::DamageType damageType
+                 , double regeneration
                  , std::map<DamageType, double> resistanceMapping)
+    : SimpleUnit(maxHealth, damage, penetration, damageType, resistanceMapping)
 {
-    this->health = maxHealth;
-    this->damage = damage;
-    this->penetration = penetration;
-    this->damageType = damageType;
-    this->resistanceMapping = resistanceMapping;
+    this->regeneration = regeneration;
 }
 
-double Monster::getHealth()
+double Monster::getRegeneration()
 {
-    return this->health;
+    return regeneration;
+}
+std::string Monster::toString()
+{
+    return "Monster";
+}
+
+void Monster::takeDamage(double enemyDamage, double enemyPenetration, IUnit::DamageType attackDamageType)
+{
+    SimpleUnit::takeDamage(enemyDamage, penetration, damageType);
+
+    if (getHealth() <= 0)
+    {
+        this->health = 0;
+        std::cout << toString() << " has died!" << std::endl;
+    }
+    else
+    {
+        this->health += regeneration;
+        std::cout << toString() << " has regenerated health to: " << getHealth() << "!" << std::endl;
+    }
 }

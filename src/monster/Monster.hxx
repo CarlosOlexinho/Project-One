@@ -5,30 +5,26 @@
 #ifndef PROJECT_ONE_MONSTER_HXX
 #define PROJECT_ONE_MONSTER_HXX
 
-#include <map>
-#include "../interface/IUnit.hxx"
+#include "../SimpleUnit.hxx"
 
 class Monster
-    : public IUnit
+    : public SimpleUnit
 {
-    double     health;
-    double     damage;
-    double     penetration;
-    DamageType damageType;
+    double regeneration;
 
-    std::map<DamageType, double> resistanceMapping;
 public:
     Monster(double maxHealth
             , double damage
             , double penetration
             , DamageType damageType
+            , double regeneration
             , std::map<DamageType, double> resistanceMapping);
+    ~Monster() override = default;
 
     void takeDamage(double enemyDamage, double enemyPenetration, DamageType attackDamageType) override;
-    double getDamage() override;
-    double getPenetration() override;
-    DamageType getDamageType() override;
-    double getHealth() override;
+
+    double getRegeneration();
+    std::string toString() override;
 };
 
 

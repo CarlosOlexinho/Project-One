@@ -32,6 +32,65 @@ Grading scale is going to have 5 values, from 1 to 5:
 
 ## Lesson log
 
+### Lesson 3
+
+*Saturday, 5th of April*
+
+#### Previous lesson mistakes
+
+-   You have to watch out what kind of return value does function have
+-   You can't assign void (in most cases)
+-   You have to remember logical values of at least AND and OR
+
+**AND**
+
+|  X   |  Y   | RESULT |
+| :--: | :--: | :----: |
+|  1   |  1   |   1    |
+|  1   |  0   |   0    |
+|  0   |  1   |   0    |
+|  0   |  0   |   0    |
+
+**OR**
+
+|  X   |  Y   | RESULT |
+| :--: | :--: | :----: |
+|  1   |  1   |   1    |
+|  1   |  0   |   1    |
+|  0   |  1   |   1    |
+|  0   |  0   |   0    |
+
+
+
+#### This lesson overview
+
+Today we will focus on code refactor which we have produced on yesterday lesson. That means we will design new fighting system, and abstract our current fighting system. After today's lesson, we will create "Synopsis" after each lesson to sum up knowledge, and to be 100% correct with definitions and understanding of facts.
+
+#### Homework
+
+-   [ ] Write first synopsis, check most important parts in tasks
+-   [ ] Write two new classes for `Monster` and `Humanoid` (4 together), each of those should have distinct behaviour, which make them special in some way.
+-   [ ] Add new `IUnit` implementation (different than `SimpleUnit`) and create one basic implementation of it (like `Monster` or `Humanoid`).
+-   [ ] Add your new unit to fight, instead of `fighter_2`.
+
+
+
+#### Literature (worth reading)
+
+-   [ ] 
+
+#### Tasks
+
+-   [ ] [Struct](https://en.cppreference.com/w/cpp/keyword/struct)
+-   [ ] [Class](https://en.cppreference.com/w/cpp/keyword/class)
+-   [ ] Struct vs Class
+-   [ ] Inheritance
+-   [ ] Interface
+
+
+
+
+
 ### Lesson 2
 
 *Saturday, 4th of April*
@@ -50,7 +109,7 @@ N/A
 
 #### Homework
 
--   [ ] 
+-   [x] Make fight last till death
 
 
 
@@ -61,6 +120,8 @@ N/A
 #### Tasks
 
 -   [ ] 
+
+
 
 ### Lesson 1
 

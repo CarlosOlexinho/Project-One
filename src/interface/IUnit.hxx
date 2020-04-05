@@ -16,11 +16,15 @@ struct IUnit
         EarthDamage
     };
 
+    virtual ~IUnit() = default;
+
     virtual void takeDamage(double enemyDamage, double enemyPenetration, DamageType attackDamageType) = 0;
     virtual double getDamage() = 0;
     virtual double getPenetration() = 0;
     virtual DamageType getDamageType() = 0;
     virtual double getHealth() = 0;
+
+    virtual std::string toString() = 0;
 };
 
 #endif //PROJECT_ONE_IMONSTER_HXX
