@@ -34,3 +34,8 @@ Monster::Monster(double maxHealth
     this->damageType = damageType;
     this->resistanceMapping = resistanceMapping;
 }
+
+double Monster::getHealth()
+{
+    return this->health;
+}

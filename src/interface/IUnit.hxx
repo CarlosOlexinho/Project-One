@@ -20,6 +20,7 @@ struct IUnit
     virtual double getDamage() = 0;
     virtual double getPenetration() = 0;
     virtual DamageType getDamageType() = 0;
+    virtual double getHealth() = 0;
 };
 
 #endif //PROJECT_ONE_IMONSTER_HXX

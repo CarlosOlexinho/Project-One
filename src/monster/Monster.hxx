@@ -28,8 +28,7 @@ public:
     double getDamage() override;
     double getPenetration() override;
     DamageType getDamageType() override;
-
-    double getHealth();
+    double getHealth() override;
 };
 
 

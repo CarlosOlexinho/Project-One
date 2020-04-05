@@ -1,6 +1,7 @@
 #include <iostream>
 #include "monster/Monster.hxx"
 
+
 int main(int argc, char** args)
 {
     Monster fighter_1(
@@ -46,6 +47,18 @@ int main(int argc, char** args)
      *      Make them fight till death of weaker one.
      *      (Till health is lower or equal 0)
      */
+
+    while ( fighter_1.getHealth() >= 0 || fighter_2.getHealth() >= 0)
+    {
+        fighter_1.getHealth() -= fighter_1.takeDamage(
+                fighter_2.getDamage(),
+                fighter_2.getPenetration(),
+                fighter_2.getDamageType());
+        fighter_2.getHealth() -= fighter_2.takeDamage(
+                fighter_1.getDamage(),
+                fighter_1.getPenetration(),
+                fighter_1.getDamageType());
+    }
 
     return 0;
 }
