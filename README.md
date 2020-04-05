@@ -3,8 +3,11 @@
 ## Skills acquired
 
 -   c++ (Skill level: **2**)
--   GIT (Skill level: **1**)
--   Markdown (Skill level: **0**)
+    -   Inheritance (Skill level: **0**)
+        -   Interfaces (Skill level: **0**)
+        -   Polymorphism (Skill level: **1**)
+-   GIT (Skill level: **2**)
+-   Markdown (Skill level: **1**)
 -   IDE (Skill level: **2**)
     -   CLion (Skill level: **2**)
 -   Tools (Skill level: **0**)
