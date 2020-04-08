@@ -5,7 +5,6 @@
 #ifndef PROJECT_ONE_ELF_HXX
 #define PROJECT_ONE_ELF_HXX
 
-
 #include "../Humanoid.hxx"
 
 class Elf

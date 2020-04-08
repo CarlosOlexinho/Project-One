@@ -13,7 +13,8 @@ struct IUnit
         FireDamage,
         WaterDamage,
         WindDamage,
-        EarthDamage
+        EarthDamage,
+        FrostDamage,
     };
 
     virtual ~IUnit() = default;

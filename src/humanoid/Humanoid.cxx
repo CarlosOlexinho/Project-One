@@ -4,9 +4,6 @@
 
 #include "Humanoid.hxx"
 
-
-#include <iostream>
-
 Humanoid::Humanoid(double maxHealth
                    , double damage
                    , double penetration

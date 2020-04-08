@@ -5,7 +5,6 @@
 #ifndef PROJECT_ONE_HUMANOID_HXX
 #define PROJECT_ONE_HUMANOID_HXX
 
-
 #include <map>
 #include "../SimpleUnit.hxx"
 
