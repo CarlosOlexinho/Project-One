@@ -1,4 +1,4 @@
-# Course progress log
+ # Course progress log
 
 ## Skills acquired
 
@@ -34,6 +34,36 @@ Grading scale is going to have 5 values, from 1 to 5:
 -   
 
 ## Lesson log
+
+### Lesson 4
+
+*Thursday, 9th of April*
+
+#### Previous lesson mistakes
+
+-   
+
+#### This lesson overview
+
+Today we will focus mostly on code review. We will try to get better results and talk about improvements for next meeting (*Saturday, 11th of April*).
+
+#### Homework
+
+-   [ ] Write first synopsis, check most important parts in tasks
+
+
+
+#### Literature (worth reading)
+
+-   [ ] [`auto`](https://en.cppreference.com/w/cpp/language/auto)
+-   [ ] [`std::vector`](https://www.geeksforgeeks.org/vector-in-cpp-stl/)
+
+#### Tasks
+
+- [ ] Implement `ITeamCompositor`
+- [ ] Implement `IFightSimulator`
+- [ ] Put implementations into your `main.cpp` (first `TODO`)
+- [ ] Put your chosen members of team into compositor (second `TODO`)
 
 ### Lesson 3
 
@@ -72,9 +102,9 @@ Today we will focus on code refactor which we have produced on yesterday lesson.
 #### Homework
 
 -   [ ] Write first synopsis, check most important parts in tasks
--   [ ] Write two new classes for `Monster` and `Humanoid` (4 together), each of those should have distinct behaviour, which make them special in some way.
--   [ ] Add new `IUnit` implementation (different than `SimpleUnit`) and create one basic implementation of it (like `Monster` or `Humanoid`).
--   [ ] Add your new unit to fight, instead of `fighter_2`.
+-   [x] Write two new classes for `Monster` and `Humanoid` (4 together), each of those should have distinct behaviour, which make them special in some way.
+-   [x] Add new `IUnit` implementation (different than `SimpleUnit`) and create one basic implementation of it (like `Monster` or `Humanoid`).
+-   [x] Add your new unit to fight, instead of `fighter_2`.
 
 
 

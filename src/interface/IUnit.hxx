@@ -26,6 +26,8 @@ struct IUnit
     virtual double getHealth() = 0;
 
     virtual std::string toString() = 0;
+    virtual std::string victorySpeech() = 0;
+    virtual std::string defeatSpeech() = 0;
 };
 
 #endif //PROJECT_ONE_IMONSTER_HXX
