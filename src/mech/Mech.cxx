@@ -8,11 +8,11 @@ Mech::Mech(double maxHealth
         , double damage
         , double penetration
         , IUnit::DamageType damageType
-        , std::map<DamageType, double> specialisation
+        , std::map<DamageType, double> configuration
         , std::map<DamageType, double> resistanceMapping)
         : RoboUnit(maxHealth, damage, penetration, damageType, resistanceMapping)
 {
-    this->specialisation = specialisation;
+    this->configuration = configuration;
 }
 
 std::string Mech::toString()
@@ -21,5 +21,5 @@ std::string Mech::toString()
 }
 double Mech::getDamage()
 {
-    return RoboUnit::getDamage() * specialisation[damageType];
+    return RoboUnit::getDamage() * configuration[damageType];
 }

@@ -2,6 +2,8 @@
 // Created by black on 05.04.2020.
 //
 
+#include <utility>
+
 #include "Humanoid.hxx"
 
 Humanoid::Humanoid(double maxHealth
@@ -10,9 +12,9 @@ Humanoid::Humanoid(double maxHealth
                    , IUnit::DamageType damageType
                    , std::map<DamageType, double> specialisation
                    , std::map<DamageType, double> resistanceMapping)
-    : SimpleUnit(maxHealth, damage, penetration, damageType, resistanceMapping)
+    : SimpleUnit(maxHealth, damage, penetration, damageType, std::move(resistanceMapping))
 {
-    this->specialisation = specialisation;
+    this->specialisation = std::move(specialisation);
 }
 
 std::string Humanoid::toString()

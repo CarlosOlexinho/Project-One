@@ -18,7 +18,7 @@ Dwarf::Dwarf(double maxHealth, double damage, double penetration, IUnit::DamageT
                 {Dwarf::EarthDamage,     0.f},
         },
         {
-                {Dwarf::PhysicalDamage, 0.7f},
+                {Dwarf::PhysicalDamage, 0.8f},
                 {Dwarf::FireDamage,     0.5f},
                 {Dwarf::WaterDamage,    0.5f},
                 {Dwarf::WindDamage,     0.5f},

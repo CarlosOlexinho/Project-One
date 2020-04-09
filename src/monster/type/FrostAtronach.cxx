@@ -12,10 +12,10 @@ FrostAtronach::FrostAtronach(double maxHealth, double damage)
         , FrostDamage
         , 30.f
         , {
-                {PhysicalDamage,    .5f},
+                {PhysicalDamage,    0.05f},
                 {FireDamage,        0.f},
                 {WaterDamage,       0.5f},
-                {EarthDamage,       0.f},
+                {EarthDamage,       0.05f},
                 {FrostDamage,       1.f}
         }) { }
 void FrostAtronach::takeDamage(double enemyDamage, double enemyPenetration, IUnit::DamageType attackDamageType)

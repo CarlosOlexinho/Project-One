@@ -11,14 +11,14 @@ class Mech
 
             : public RoboUnit
     {
-        std::map<DamageType, double> specialisation;
+        std::map<DamageType, double> configuration;
 
     public:
         Mech(double maxHealth
                 , double damage
                 , double penetration
                 , DamageType damageType
-                , std::map<DamageType, double> specialisation
+                , std::map<DamageType, double> configuration
                 , std::map<DamageType, double> resistanceMapping);
         ~Mech() override = default;
 

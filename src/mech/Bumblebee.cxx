@@ -11,16 +11,16 @@ Bumblebee::Bumblebee(double maxHealth, double damage, double penetration, IUnit:
         penetration,
         damageType,
         {
-                {Bumblebee::PhysicalDamage, 5.f},
-                {Bumblebee::FireDamage,     10.f},
-                {Bumblebee::WaterDamage,    0.f},
-                {Bumblebee::WindDamage,     0.f},
+                {Bumblebee::PhysicalDamage,     5.f},
+                {Bumblebee::FireDamage,         10.f},
+                {Bumblebee::LightningDamage,    0.f},
+                {Bumblebee::SteamDamage,        0.f},
         },
         {
-                {Bumblebee::PhysicalDamage, 0.8f},
-                {Bumblebee::FireDamage,     0.5f},
-                {Bumblebee::WaterDamage,    0.f},
-                {Bumblebee::WindDamage,     0.8f},
+                {Bumblebee::PhysicalDamage,     0.7f},
+                {Bumblebee::FireDamage,         0.3f},
+                {Bumblebee::LightningDamage,    0.f},
+                {Bumblebee::SteamDamage,        0.f},
         })
 {
 
