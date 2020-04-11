@@ -35,3 +35,11 @@ std::string Dwarf::toString()
 {
     return "Fest Dwarf";
 }
+std::string Dwarf::victorySpeech()
+{
+    return "For Mahakam!";
+}
+std::string Dwarf::defeatSpeech()
+{
+    return "Damn you...";
+}

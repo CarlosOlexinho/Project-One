@@ -18,6 +18,8 @@ public:
     void takeDamage(double enemyDamage, double enemyPenetration, DamageType attackDamageType) override;
 
     std::string toString() override;
+    std::string victorySpeech();
+    std::string defeatSpeech();
 };
 
 

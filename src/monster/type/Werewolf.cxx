@@ -33,3 +33,12 @@ std::string Werewolf::toString()
 {
     return "Fluffy";
 }
+
+std::string Werewolf::victorySpeech()
+{
+    return "I'm hungry!";
+}
+std::string Werewolf::defeatSpeech()
+{
+    return "I'll join my ancestors in the land of eternal hunting...";
+}

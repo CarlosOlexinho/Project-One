@@ -33,3 +33,12 @@ std::string FrostAtronach::toString()
 {
     return "Ice Cube";
 }
+
+std::string FrostAtronach::victorySpeech()
+{
+    return "...";
+}
+std::string FrostAtronach::defeatSpeech()
+{
+    return "...";
+}

@@ -35,3 +35,11 @@ std::string Druid::toString()
 {
     return "Paranormalnix";
 }
+std::string Druid::victorySpeech()
+{
+    return "For Terra Mater!";
+}
+std::string Druid::defeatSpeech()
+{
+    return "Terra Mater will undertake me with open arms!";
+}

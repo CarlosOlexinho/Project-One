@@ -18,6 +18,8 @@ public:
 
     double getDamage() override;
     std::string toString() override;
+    std::string victorySpeech();
+    std::string defeatSpeech();
 };
 
 

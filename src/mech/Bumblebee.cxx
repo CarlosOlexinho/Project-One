@@ -33,3 +33,11 @@ std::string Bumblebee::toString()
 {
     return "Bumblebee";
 }
+
+std::string Bumblebee::victorySpeech()
+{
+    return "I'll destroy live ones!";
+}
+std::string Bumblebee::defeatSpeech() {
+    return "Devastated...";
+}

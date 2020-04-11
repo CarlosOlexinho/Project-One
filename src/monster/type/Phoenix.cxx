@@ -32,3 +32,12 @@ std::string Phoenix::toString()
 {
     return "Phoenix";
 }
+
+std::string Phoenix::victorySpeech()
+{
+    return "I shall burn you all!";
+}
+std::string Phoenix::defeatSpeech()
+{
+    return "I'll be reborn form ashes...";
+}

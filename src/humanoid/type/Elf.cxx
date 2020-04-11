@@ -35,3 +35,12 @@ std::string Elf::toString()
 {
     return "Hans the Wasser Elf";
 }
+
+std::string Elf::victorySpeech()
+{
+    return "For the glory of Wasser!";
+}
+std::string Elf::defeatSpeech()
+{
+    return"My ancestors awaits...";
+}
