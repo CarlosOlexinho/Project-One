@@ -4,7 +4,7 @@
 
 #ifndef PROJECT_ONE_IMONSTER_HXX
 #define PROJECT_ONE_IMONSTER_HXX
-
+#include <string>
 struct IUnit
 {
     enum DamageType
