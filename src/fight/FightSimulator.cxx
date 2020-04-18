@@ -7,19 +7,21 @@
 #include <iostream>
 #include <vector>
 
-fightSimulator::void FightSimulator::acquireTeamsForFight(std::vector<IUnit *> team_1, std::vector<IUnit *> team_2)
+void FightSimulator::acquireTeamsForFight(std::vector<IUnit *> team_1, std::vector<IUnit *> team_2)
 {
-    std::cout << "team_1! team_2! Prepare for battle!!"
-    std::vector<IUnit *> team_1;
-    std::vector<IUnit *> team_2;
+    std::cout << "team_1! team_2! Prepare for battle!!" << std::endl;
+
+    this->team_1 = team_1;
+    this->team_2 = team_2;
+
 }
 
-fightSimulator::std::vector<IUnit *> FightSimulator::startBattle()
+std::vector<IUnit *> FightSimulator::startBattle()
 {
-    team_1(first).takeDamage(
-            team_2.getDamage(first),
-            team_2.getPenetration(first),
-            team_2getDamageType(first)
+    team_1[0]->takeDamage(
+            team_2[0]->getDamage(),
+            team_2[0]->getPenetration(),
+            team_2[0]->getDamageType()
             );
     team_1(second).takeDamage(
             team_2.getDamage(second),

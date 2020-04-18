@@ -23,13 +23,13 @@ IUnit *TeamCompositor::pickChampion()
 
     switch (champion)
     {
-        case 1. Druid = new Druid;
-        case 2. Dwarf = new Dwarf;
-        case 3. Elf = new Elf;
-        case 4. Bumblebee = new Bumblebee;
-        case 5. FrostAtronach = new FrostAtronach;
-        case 6. Phoenix = new Phoenix;
-        case 7. Werewolf = new Werewolf;
+        case 1: Druid = new Druid;
+        case 2: Dwarf = new Dwarf;
+        case 3: Elf = new Elf;
+        case 4: Bumblebee = new Bumblebee;
+        case 5: FrostAtronach = new FrostAtronach;
+        case 6: Phoenix = new Phoenix;
+        case 7: Werewolf = new Werewolf;
         else
         {
             std::cout << "Choose again your champion!" << std::endl;
