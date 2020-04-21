@@ -3,13 +3,20 @@
 //
 
 #include "TeamCompositor.hxx"
+#include "../humanoid/type/Druid.hxx"
+#include "../humanoid/type/Dwarf.hxx"
+#include "../humanoid/type/Elf.hxx"
+#include "../mech/Bumblebee.hxx"
+#include "../monster/type/FrostAtronach.hxx"
+#include "../monster/type/Phoenix.hxx"
+#include "../monster/type/Werewolf.hxx"
 #include <vector>
 #include <string>
 #include <iostream>
 
 IUnit *TeamCompositor::pickChampion()
 {
-    IUnit *champion;
+    int champion;
 
     std::cout << "Choose your champion!" << std::endl;
     std::cout << "1. Druid" << std::endl;
@@ -20,25 +27,25 @@ IUnit *TeamCompositor::pickChampion()
     std::cout << "6. Phoenix" << std::endl;
     std::cout << "7. Werewolf" << std::endl;
     std::cout << "There is no more champion!" << std::endl;
+    std::cin >> champion;
+
 
     switch (champion)
     {
-        case 1: Druid = new Druid;
-        case 2: Dwarf = new Dwarf;
-        case 3: Elf = new Elf;
-        case 4: Bumblebee = new Bumblebee;
-        case 5: FrostAtronach = new FrostAtronach;
-        case 6: Phoenix = new Phoenix;
-        case 7: Werewolf = new Werewolf;
-        else
+        case 1: return new Druid(100, 30, 0.f, Druid::EarthDamage);
+        case 2: return new Dwarf(100,30,0.5f,Dwarf::PhysicalDamage);
+        case 3: return new Elf(100, 30, 0.2f, Elf::WaterDamage);
+        case 4: return new Bumblebee(300, 30, 0.3f, Bumblebee::FireDamage);
+        case 5: return new FrostAtronach(300, 20);
+        case 6: return new Phoenix(300, 20);
+        case 7: return new Werewolf(300, 20);
+        default:
         {
             std::cout << "Choose again your champion!" << std::endl;
-            switch champion()
+            switch (champion);
         }
 
     }
-
-    std::cin >> champion;
     return champion;
 }
 
