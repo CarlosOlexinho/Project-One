@@ -14,6 +14,7 @@ class FightSimulator
     std::vector<IUnit*> team_2;
 
     void acquireTeamsForFight(std::vector<IUnit*> team_1, std::vector<IUnit*> team_2) override;
+    unsigned int aliveMembers(const std::vector<IUnit*>& team);
 
     std::vector<IUnit*> startBattle() override;
 };

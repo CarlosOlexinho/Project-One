@@ -36,7 +36,7 @@ std::string FrostAtronach::toString()
 
 std::string FrostAtronach::victorySpeech()
 {
-    return "...";
+    return "Cube Cube";
 }
 std::string FrostAtronach::defeatSpeech()
 {
