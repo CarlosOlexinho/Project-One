@@ -19,6 +19,10 @@ IUnit *TeamCompositor::pickChampion()
 {
    while(true) {
 
+       /*
+        * TODO:
+        *   In new implementation, change this lines into random generating number between 1 and 7
+        */
        int champion;
 
        std::cout << "Choose your champion!" << std::endl;
@@ -31,6 +35,10 @@ IUnit *TeamCompositor::pickChampion()
        std::cout << "7. Werewolf" << std::endl;
        std::cin >> champion;
 
+       /*
+        *  TODO:
+        *   Dont touch underneath!
+        */
 
        switch (champion) {
            case 1:

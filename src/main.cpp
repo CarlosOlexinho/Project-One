@@ -8,12 +8,26 @@
 
 int main(int argc, char** args)
 {
+    /**
+     *      TODO FIXME:
+     *          Fix frostatronach regeneration speed! Dont let it regenerate over max health!
+     *              Notes:
+     *                  - You should most likely add field to each IUnit implementation, which
+     *                      will represent max health available for unit.
+     *                  - You should check this field before regenerating. If it will over heal, get
+     *                      health back to max hp
+     *
+     *      TODO:
+     *          Implement new TeamCompositor, which will randomly choose which unit will be selected
+     *              (should do it 3 times).
+     *               Notes:
+     *                  - Read about std::rand (https://en.cppreference.com/w/cpp/numeric/random/rand)
+     *
+     */
 
-    // TODO: Add your interface implementations here.
     ITeamCompositor* teamCompositor = new TeamCompositor;
     IFightSimulator* fightSimulator = new FightSimulator;
 
-    // TODO: Here you shall put team members into teams
     auto team_1 = teamCompositor
         ->createTeam(teamCompositor->pickChampion(), teamCompositor->pickChampion(), teamCompositor->pickChampion());
     auto team_2 = teamCompositor

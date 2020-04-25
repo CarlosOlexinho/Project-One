@@ -35,6 +35,30 @@ Grading scale is going to have 5 values, from 1 to 5:
 
 ## Lesson log
 
+### Lesson 5
+
+*Thursday, 25th of April*
+
+#### Previous lesson mistakes
+
+-   
+
+#### This lesson overview
+
+Today we will get information about next tasks (`tuesday 28th of April`).
+
+#### Homework
+
+#### Literature (worth reading)
+
+
+#### Tasks
+
+- [ ] Implement `ITeamCompositor`
+- [ ] Implement `IFightSimulator`
+- [ ] Put implementations into your `main.cpp` (first `TODO`)
+- [ ] Put your chosen members of team into compositor (second `TODO`)
+
 ### Lesson 4
 
 *Thursday, 9th of April*
