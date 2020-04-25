@@ -19,7 +19,7 @@ int main(int argc, char** args)
 
     // TODO: Add your interface implementations here.
     ITeamCompositor *teamCompositor = new TeamCompositor;
-    //IFightSimulator *fightSimulator;
+    IFightSimulator *fightSimulator = new FightSimulator;
 
     // TODO: Here you shall put team members into teams
     auto team_1 = teamCompositor->createTeam(teamCompositor -> pickChampion(), teamCompositor -> pickChampion(), teamCompositor -> pickChampion());

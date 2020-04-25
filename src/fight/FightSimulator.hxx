@@ -10,6 +10,9 @@
 class FightSimulator
        : public IFightSimulator
 {
+    std::vector<IUnit*> team_1;
+    std::vector<IUnit*> team_2;
+
     void acquireTeamsForFight(std::vector<IUnit*> team_1, std::vector<IUnit*> team_2) override;
 
     std::vector<IUnit*> startBattle() override;
