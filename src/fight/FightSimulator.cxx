@@ -17,42 +17,41 @@ void FightSimulator::acquireTeamsForFight(std::vector<IUnit *> team_1, std::vect
 
 std::vector<IUnit *> FightSimulator::startBattle()
 {
-    team_1[0]->takeDamage(
-            team_2[0]->getDamage(),
-            team_2[0]->getPenetration(),
-            team_2[0]->getDamageType()
-            );
-    team_1[1]->takeDamage(
-            team_2[1]->getDamage(),
-            team_2[1]->getPenetration(),
-            team_2[1]->getDamageType()
-            );
-    team_1[2]->takeDamage(
-            team_2[2]->getDamage(),
-            team_2[2]->getPenetration(),
-            team_2[2]->getDamageType()
-            );
-    team_2[0]->takeDamage(
-            team_2[0]->getDamage(),
-            team_2[0]->getPenetration(),
-            team_2[0]->getDamageType()
-            );
-    team_2[1]->takeDamage(
-            team_2[1]->getDamage(),
-            team_2[1]->getPenetration(),
-            team_2[1]->getDamageType()
-            );
-    team_2[2]->takeDamage(
-            team_2[2]->getDamage(),
-            team_2[2]->getPenetration(),
-            team_2[2]->getDamageType()
-            );
-
 
     while (team_1[0]->getHealth() >= 0 && team_1[1]->getHealth() >= 0 && team_1[2]->getHealth() >= 0 && team_2[0]->getHealth() >= 0 && team_2[1]->getHealth() >= 0 && team_2[2]->getHealth() >= 0)
     {
-        team_1[0]->getHealth();
+        team_1[0]->takeDamage(
+                team_2[0]->getDamage(),
+                team_2[0]->getPenetration(),
+                team_2[0]->getDamageType()
+        );
+        team_1[1]->takeDamage(
+                team_2[1]->getDamage(),
+                team_2[1]->getPenetration(),
+                team_2[1]->getDamageType()
+        );
+        team_1[2]->takeDamage(
+                team_2[2]->getDamage(),
+                team_2[2]->getPenetration(),
+                team_2[2]->getDamageType()
+        );
+        team_2[0]->takeDamage(
+                team_2[0]->getDamage(),
+                team_2[0]->getPenetration(),
+                team_2[0]->getDamageType()
+        );
+        team_2[1]->takeDamage(
+                team_2[1]->getDamage(),
+                team_2[1]->getPenetration(),
+                team_2[1]->getDamageType()
+        );
+        team_2[2]->takeDamage(
+                team_2[2]->getDamage(),
+                team_2[2]->getPenetration(),
+                team_2[2]->getDamageType()
+        );
     }
-
-    return std::vector<IUnit *>();
+    if (team_1[0]->getHealth() >= 0 && team_1[1]->getHealth() >= 0 && team_1[2]->getHealth() >=0)
+    return std::vector<IUnit *> (team_1);
+    else return std::vector<IUnit *> (team_2);
 }

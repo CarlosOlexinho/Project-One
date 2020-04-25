@@ -34,11 +34,11 @@ IUnit *TeamCompositor::pickChampion()
 
        switch (champion) {
            case 1:
-               return new Druid(100, 30, 0.f, Druid::EarthDamage);
+               return new Druid(100, 40, 0.f, Druid::EarthDamage);
            case 2:
-               return new Dwarf(100, 30, 0.5f, Dwarf::PhysicalDamage);
+               return new Dwarf(100, 40, 0.5f, Dwarf::PhysicalDamage);
            case 3:
-               return new Elf(100, 30, 0.2f, Elf::WaterDamage);
+               return new Elf(100, 40, 0.2f, Elf::WaterDamage);
            case 4:
                return new Bumblebee(300, 30, 0.3f, Bumblebee::FireDamage);
            case 5:
