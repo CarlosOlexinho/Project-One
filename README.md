@@ -35,6 +35,26 @@ Grading scale is going to have 5 values, from 1 to 5:
 
 ## Lesson log
 
+### Lesson 6
+
+*Thursday, 30th of April*
+
+#### Previous lesson mistakes
+
+-   
+
+#### This lesson overview
+
+Today we will get information about next tasks (`friday 1st of May`).
+
+#### Homework
+- [ ] Create new fight simulator in which after finished fight they will move to next alive opponent
+
+#### Literature (worth reading)
+
+
+#### Tasks
+
 ### Lesson 5
 
 *Thursday, 25th of April*
@@ -54,10 +74,10 @@ Today we will get information about next tasks (`tuesday 28th of April`).
 
 #### Tasks
 
-- [ ] Implement `ITeamCompositor`
-- [ ] Implement `IFightSimulator`
-- [ ] Put implementations into your `main.cpp` (first `TODO`)
-- [ ] Put your chosen members of team into compositor (second `TODO`)
+- [x] Implement `ITeamCompositor`
+- [x] Implement `IFightSimulator`
+- [x] Put implementations into your `main.cpp` (first `TODO`)
+- [x] Put your chosen members of team into compositor (second `TODO`)
 
 ### Lesson 4
 
