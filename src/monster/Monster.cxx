@@ -20,6 +20,7 @@ double Monster::getRegeneration()
 {
     return regeneration;
 }
+
 std::string Monster::toString()
 {
     return "Monster";
@@ -39,4 +40,8 @@ void Monster::takeDamage(double enemyDamage, double enemyPenetration, IUnit::Dam
         this->health += regeneration;
         std::cout << toString() << " has regenerated health to: " << getHealth() << "!" << std::endl;
     }
+}
+double Monster::maxAvaiableHeatlh()
+{
+
 }

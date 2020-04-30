@@ -12,8 +12,7 @@ class FrostAtronach
         : public Monster
 {
 public:
-    FrostAtronach(double maxHealth
-            , double damage);
+    FrostAtronach(double maxHealth, double damage);
 
     void takeDamage(double enemyDamage, double enemyPenetration, DamageType attackDamageType) override;
 

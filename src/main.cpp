@@ -5,6 +5,7 @@
 #include "interface/IFightSimulator.hxx"
 #include "team/TeamCompositor.hxx"
 #include "fight/FightSimulator.hxx"
+#include "team/randomTeamCompositor.hxx"
 
 int main(int argc, char** args)
 {
@@ -25,28 +26,29 @@ int main(int argc, char** args)
      *
      */
 
-    ITeamCompositor* teamCompositor = new TeamCompositor;
-    IFightSimulator* fightSimulator = new FightSimulator;
+    ITeamCompositor* teamCompositor = new randomTeamCompositor;
+    //ITeamCompositor* teamCompositor = new TeamCompositor;
+    //IFightSimulator* fightSimulator = new FightSimulator;
 
     auto team_1 = teamCompositor
         ->createTeam(teamCompositor->pickChampion(), teamCompositor->pickChampion(), teamCompositor->pickChampion());
     auto team_2 = teamCompositor
         ->createTeam(teamCompositor->pickChampion(), teamCompositor->pickChampion(), teamCompositor->pickChampion());
 
-    fightSimulator->acquireTeamsForFight(team_1, team_2);
-    auto victoriousTeam = fightSimulator->startBattle();
+//    fightSimulator->acquireTeamsForFight(team_1, team_2);
+//    auto victoriousTeam = fightSimulator->startBattle();
 
-    for(IUnit* victoriousMember : victoriousTeam)
-    {
-        if(victoriousMember->getHealth() > 0)
-        {
-            std::cout << victoriousMember->toString() << " says : " << victoriousMember->victorySpeech() << std::endl;
-        }
-        else
-        {
-            std::cout << victoriousMember->toString() << " says : " << victoriousMember->defeatSpeech() << std::endl;
-        }
-    }
+//    for(IUnit* victoriousMember : victoriousTeam)
+//    {
+//        if(victoriousMember->getHealth() > 0)
+//        {
+//            std::cout << victoriousMember->toString() << " says : " << victoriousMember->victorySpeech() << std::endl;
+//        }
+//        else
+//        {
+//            std::cout << victoriousMember->toString() << " says : " << victoriousMember->defeatSpeech() << std::endl;
+//        }
+//    }
 
     teamCompositor->freeMemoryOutOfTeam(team_1);
     teamCompositor->freeMemoryOutOfTeam(team_2);

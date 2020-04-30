@@ -33,6 +33,8 @@ public:
     double getPenetration() override;
     DamageType getDamageType() override;
     double getHealth() override;
+    //double maxAvaiableHealth() override;
+
 
     std::string toString() override;
 };

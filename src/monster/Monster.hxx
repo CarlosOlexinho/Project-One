@@ -23,6 +23,7 @@ public:
 
     void takeDamage(double enemyDamage, double enemyPenetration, DamageType attackDamageType) override;
 
+    double maxAvaiableHeatlh();
     double getRegeneration();
     std::string toString() override;
 };

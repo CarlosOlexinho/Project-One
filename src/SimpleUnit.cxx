@@ -46,3 +46,8 @@ std::string SimpleUnit::toString()
 {
     return "SimpleUnit";
 }
+
+//double SimpleUnit::maxAvaiableHealth()
+//{
+//    return this-> maxAvaiableHealth();
+//}

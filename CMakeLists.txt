@@ -41,4 +41,4 @@ add_executable(
         src/fight/FightSimulator.hxx
         src/fight/FightSimulator.cxx
 
-)
+        src/team/randomTeamCompositor.cxx src/team/randomTeamCompositor.hxx)

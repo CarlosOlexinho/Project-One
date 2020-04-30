@@ -26,6 +26,7 @@ struct IUnit
     virtual double getPenetration() = 0;
     virtual DamageType getDamageType() = 0;
     virtual double getHealth() = 0;
+    //virtual double maxAvailableHealth();
 
     virtual std::string toString() = 0;
     virtual std::string victorySpeech() = 0;
