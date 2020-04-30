@@ -82,7 +82,7 @@ unsigned int FightSimulator::aliveMembers(const std::vector<IUnit*>& team)
     unsigned deadMembers = 0u;
     for(auto member : team)
     {
-        if(member->getHealth() < 0)
+        if(member->getHealth() > 0)
         {
             deadMembers++;
         }

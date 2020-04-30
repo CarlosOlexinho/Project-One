@@ -7,7 +7,7 @@
 
 #include "../interface/ITeamCompositor.hxx"
 
-class randomTeamCompositor
+class RandomTeamCompositor
         : public ITeamCompositor
 {
 public:
