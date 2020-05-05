@@ -17,6 +17,7 @@ class FightSimulator
     unsigned int aliveMembers(const std::vector<IUnit*>& team);
 
     std::vector<IUnit*> startBattle() override;
+    bool stillAlive(IUnit *One, IUnit *Two);
 };
 
 

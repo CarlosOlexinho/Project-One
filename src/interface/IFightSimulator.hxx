@@ -26,6 +26,7 @@ struct IFightSimulator
      * @return victorious team
      */
     virtual std::vector<IUnit*> startBattle() = 0;
+
 };
 
 

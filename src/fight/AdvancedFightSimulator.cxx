@@ -1,13 +1,13 @@
 //
-// Created by lenovo on 17.04.2020.
+// Created by lenovo on 03.05.2020.
 //
 
-#include "FightSimulator.hxx"
+#include "AdvancedFightSimulator.hxx"
 #include <string>
 #include <iostream>
 #include <vector>
 
-void FightSimulator::acquireTeamsForFight(std::vector<IUnit*> team_1, std::vector<IUnit*> team_2)
+void AdvancedFightSimulator::acquireTeamsForFight(std::vector<IUnit*> team_1, std::vector<IUnit*> team_2)
 {
     std::cout << "team_1! team_2! Prepare for battle!!" << std::endl;
 
@@ -15,7 +15,7 @@ void FightSimulator::acquireTeamsForFight(std::vector<IUnit*> team_1, std::vecto
     this->team_1 = team_1;
 }
 
-bool FightSimulator::stillAlive(IUnit* One, IUnit* Two)
+bool AdvancedFightSimulator::stillAlive(IUnit* One, IUnit* Two)
 {
     if(One->getHealth() > 0 && Two->getHealth() > 0)
     {
@@ -28,18 +28,20 @@ bool FightSimulator::stillAlive(IUnit* One, IUnit* Two)
         return false;
     }
 }
-
-std::vector<IUnit* > FightSimulator::startBattle()
+//new fightSimulator -> powtórka z rozrywki -
+std::vector<IUnit* > AdvancedFightSimulator::startBattle()
 {
 
     while(aliveMembers(team_1) > 0 && aliveMembers(team_2) > 0)
     {
         for (int i=0; i < team_1.size(); i++)
         {
+//            tutaj zacząć implementację i to poniżej zastąpić w nowej klasie - tak aby można było wybrać prezciwnika
             for (int j=0; j < team_2.size(); j++)
             {
-                int currentId = (j+i) % team_2.size();
+                int currentId = (j+i) % team_2.size();  // offest
                 std::cout << "\n\nFor first team member no. " << i << ", for first team member no. " << currentId << std::endl;
+//                ten if zostaje - wywalić cuurentId i wstawić tam cina(wybór użytkowanika)
                 if (stillAlive(team_1[i], team_2[currentId]))
                 {
                     team_1[i]->takeDamage(
@@ -51,6 +53,7 @@ std::vector<IUnit* > FightSimulator::startBattle()
                     break;
                 }
             }
+//            tutaj się to kończy; wywalić fora i wstawić couta i cina - później switcha i jeżeli w cin będzie jakieś gówno to atak na pierwszego.
         }
 
     }
@@ -60,15 +63,20 @@ std::vector<IUnit* > FightSimulator::startBattle()
         std::cout << std::endl << std::endl << "Team 1 won!" << std::endl;
         return team_1;
     }
-    else if(aliveMembers(team_1) == aliveMembers(team_2) )
+    else
+    if(aliveMembers(team_1) < aliveMembers(team_2) )
     {
         std::cout << std::endl << std::endl << "Team 2 won!" << std::endl;
         return team_2;
     }
-    else{}
+    else
+    {
+        std::cout << "There is nothing here!" << std::endl;
+        return std::vector<IUnit*>();
+    }
     //rozkminić jak zwrócić pusty wektor
 }
-unsigned int FightSimulator::aliveMembers(const std::vector<IUnit*>& team)
+unsigned int AdvancedFightSimulator::aliveMembers(const std::vector<IUnit*>& team)
 {
     unsigned deadMembers = 0u;
     for (auto member : team)
@@ -80,3 +88,6 @@ unsigned int FightSimulator::aliveMembers(const std::vector<IUnit*>& team)
     }
     return team.size() - deadMembers;
 }
+
+// kolejny fight simulator dający opcję wyboru ataku dla pierwszego członka zespołu pierwszego - drugi się tylko broni.
+//

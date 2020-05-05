@@ -9,7 +9,7 @@ Werewolf::Werewolf(double maxHealth, double damage)
         maxHealth
         , damage
         , 0.5f
-        , FrostDamage
+        , PhysicalDamage
         , 30.f
         , {
                 {PhysicalDamage,    1.f},
