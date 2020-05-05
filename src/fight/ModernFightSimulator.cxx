@@ -47,18 +47,8 @@ std::vector<IUnit* > ModernFightSimulator::startBattle()
                 std::cout << "3. Third member of team_2" << std::endl;
                 std::cin >> choice;
 
-                switch(choice)
+                if (choice < 3)
                 {
-                    case 1:
-                        return reinterpret_cast<const std::vector<IUnit *> &>(team_2[0]);
-                    case 2:
-                        return reinterpret_cast<const std::vector<IUnit *> &>(team_2[1]);
-                    case 3:
-                        return reinterpret_cast<const std::vector<IUnit *> &>(team_2[2]);
-                    default:
-                        return reinterpret_cast<const std::vector<IUnit *> &>(team_2[0]);
-                }
-
                     std::cout << "\n\nFor first team member no. " << i << ", for first team member no. " << choice
                               << std::endl;
 //                ten if zostaje - wywalić cuurentId i wstawić tam cina(wybór użytkowanika)
@@ -73,7 +63,7 @@ std::vector<IUnit* > ModernFightSimulator::startBattle()
                         );
                         break;
                     }
-
+                }
 //            tutaj się to kończy; wywalić fora i wstawić couta i cina - później switcha i jeżeli w cin będzie jakieś gówno to atak na pierwszego.
         }
 

@@ -28,72 +28,70 @@ int main(int argc, char** args)
      *
      */
 // Wstawić tu menu wyboru dla symulatora i wyboru drużyny.
-
-int choose;
-
-    std::cout << "Welcome in Fight Creator!" << std::endl;
-    std::cout << "How do you wont to create team's?" << std::endl;
-    std::cout << "1. By myself." << std::endl;
-    std::cout << "2. Randomly." << std::endl;
-    std::cin >> choose;
-
-    switch(choose)
+    for(int choice=0; choice<=3; choice++)
     {
-        case 1:
-            return ITeamCompositor* teamCompositor = new TeamCompositor;
-        case 2:
-            return ITeamCompositor* teamCompositor = new RandomTeamCompositor;
+        std::cout << "Welcome in Fight Creator!" << std::endl;
+        std::cout << "How do you wont to create team's?" << std::endl;
+        std::cout << "1. By myself." << std::endl;
+        std::cout << "2. Randomly." << std::endl;
+        std::cin >> choice;
 
-        default:
-            switch(choose);
+        class ITeamCompositor *teamCompositor = nullptr;
+        switch(choice)
+        {
+            case 1:
+                new TeamCompositor;
+            case 2:
+                new RandomTeamCompositor;
+            default:
+            {
+                std::cout << "Wrong option!" << std::endl;
+            }
+        }
+
+        std::cout << "Which Fight Simulator do you wont?" << std::endl;
+        std::cout << "1. Fight  Simulator." << std::endl;
+        std::cout << "2. Advanced Fight Simulator" << std::endl;
+        std::cout << "3. Modern Fight Simulator" << std::endl;
+        std::cin >> choice;
+
+       class IFightSimulator * fightSimulator;
+        switch(choice)
+        {
+            case 1:
+                 new FightSimulator;
+            case 2:
+                new AdvancedFightSimulator;
+            case 3:
+                new ModernFightSimulator;
+            default:
+            {
+                std::cout << "Wrong option!" << std::endl;
+            }
+
+        }
+        auto team_1 = teamCompositor
+                ->createTeam(teamCompositor->pickChampion(), teamCompositor->pickChampion(), teamCompositor->pickChampion());
+        auto team_2 = teamCompositor
+                ->createTeam(teamCompositor->pickChampion(), teamCompositor->pickChampion(), teamCompositor->pickChampion());
+
+        fightSimulator->acquireTeamsForFight(team_1, team_2);
+        auto victoriousTeam = fightSimulator->startBattle();
+
+        for(IUnit* victoriousMember : victoriousTeam)
+        {
+            if(victoriousMember->getHealth() > 0)
+            {
+                std::cout << victoriousMember->toString() << " says : " << victoriousMember->victorySpeech() << std::endl;
+            }
+            else
+            {
+                std::cout << victoriousMember->toString() << " says : " << victoriousMember->defeatSpeech() << std::endl;
+            }
+        }
+
+        teamCompositor->freeMemoryOutOfTeam(team_1);
+        teamCompositor->freeMemoryOutOfTeam(team_2);
     }
-    int select;
-    std::cout << "Which Fight Simulator do you wont?" << std::endl;
-    std::cout << "1. Fight  Simulator." << std::endl;
-    std::cout << "2. Advanced Fight Simulator" << std::endl;
-    std::cout << "3. Modern Fight Simulator" << std::endl;
-    std::cin >> select;
-
-    switch(select)
-    {
-        case 1:
-            return IFightSimulator* fightSimulator = new FightSimulator;
-        case 2:
-            return IFightSimulator* fightSimulator = new AdvancedFightSimulator;
-        case 3:
-            return IFightSimulator* fightSimulator = new ModernFightSimulator;
-        default:
-            switch(select);
-    }
-
-//    ITeamCompositor* teamCompositor = new RandomTeamCompositor;
-    ITeamCompositor* teamCompositor = new TeamCompositor;
-//    IFightSimulator* fightSimulator = new FightSimulator;
-    IFightSimulator* fightSimulator = new AdvancedFightSimulator;
-//    IFightSimulator* fightSimulator = new ModernFightSimulator;
-
-    auto team_1 = teamCompositor
-        ->createTeam(teamCompositor->pickChampion(), teamCompositor->pickChampion(), teamCompositor->pickChampion());
-    auto team_2 = teamCompositor
-        ->createTeam(teamCompositor->pickChampion(), teamCompositor->pickChampion(), teamCompositor->pickChampion());
-
-   fightSimulator->acquireTeamsForFight(team_1, team_2);
-   auto victoriousTeam = fightSimulator->startBattle();
-
-   for(IUnit* victoriousMember : victoriousTeam)
-   {
-       if(victoriousMember->getHealth() > 0)
-       {
-           std::cout << victoriousMember->toString() << " says : " << victoriousMember->victorySpeech() << std::endl;
-       }
-       else
-       {
-           std::cout << victoriousMember->toString() << " says : " << victoriousMember->defeatSpeech() << std::endl;
-       }
-   }
-
-    teamCompositor->freeMemoryOutOfTeam(team_1);
-    teamCompositor->freeMemoryOutOfTeam(team_2);
-
-    return 0;
+        return 0;
 }
