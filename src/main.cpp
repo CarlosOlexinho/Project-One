@@ -28,7 +28,13 @@ int main(int argc, char** args)
      *
      */
 // Wstawić tu menu wyboru dla symulatora i wyboru drużyny.
-    for(int choice=0; choice<=3; choice++)
+    int choice;
+    int select;
+
+    ITeamCompositor * teamCompositor;
+    IFightSimulator * fightSimulator;
+
+    while(choice != 1 && choice !=2)
     {
         std::cout << "Welcome in Fight Creator!" << std::endl;
         std::cout << "How do you wont to create team's?" << std::endl;
@@ -36,13 +42,12 @@ int main(int argc, char** args)
         std::cout << "2. Randomly." << std::endl;
         std::cin >> choice;
 
-        class ITeamCompositor *teamCompositor = nullptr;
         switch(choice)
         {
             case 1:
-                new TeamCompositor;
+                teamCompositor = new TeamCompositor;
             case 2:
-                new RandomTeamCompositor;
+                teamCompositor = new RandomTeamCompositor;
             default:
             {
                 std::cout << "Wrong option!" << std::endl;
@@ -53,17 +58,16 @@ int main(int argc, char** args)
         std::cout << "1. Fight  Simulator." << std::endl;
         std::cout << "2. Advanced Fight Simulator" << std::endl;
         std::cout << "3. Modern Fight Simulator" << std::endl;
-        std::cin >> choice;
+        std::cin >> select;
 
-       class IFightSimulator * fightSimulator;
-        switch(choice)
+        switch(select)
         {
             case 1:
-                 new FightSimulator;
+                fightSimulator = new FightSimulator;
             case 2:
-                new AdvancedFightSimulator;
+                fightSimulator = new AdvancedFightSimulator;
             case 3:
-                new ModernFightSimulator;
+                fightSimulator = new ModernFightSimulator;
             default:
             {
                 std::cout << "Wrong option!" << std::endl;

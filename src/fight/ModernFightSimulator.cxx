@@ -47,7 +47,7 @@ std::vector<IUnit* > ModernFightSimulator::startBattle()
                 std::cout << "3. Third member of team_2" << std::endl;
                 std::cin >> choice;
 
-                if (choice < 3)
+                if (choice <= 3)
                 {
                     std::cout << "\n\nFor first team member no. " << i << ", for first team member no. " << choice
                               << std::endl;
