@@ -38,8 +38,8 @@ std::vector<IUnit* > ModernFightSimulator::startBattle()
     {
         for (int i=0; i < team_1.size(); i++)
         {
-//            tutaj zacząć implementację i to poniżej zastąpić w nowej klasie - tak aby można było wybrać prezciwnika
 
+//            tutaj zacząć implementację i to poniżej zastąpić w nowej klasie - tak aby można było wybrać prezciwnika
                 int choice;
                 std::cout << "Choose opponent!" << std::endl;
                 std::cout << "1. First member of team_2" << std::endl;
@@ -47,23 +47,41 @@ std::vector<IUnit* > ModernFightSimulator::startBattle()
                 std::cout << "3. Third member of team_2" << std::endl;
                 std::cin >> choice;
 
-                if (choice <= 3)
-                {
-                    std::cout << "\n\nFor first team member no. " << i << ", for first team member no. " << choice
-                              << std::endl;
-//                ten if zostaje - wywalić cuurentId i wstawić tam cina(wybór użytkowanika)
-                    if (stillAlive(team_1[i], team_2[choice]))
-                    {
-                        team_1[i]->takeDamage(
-                                team_2[choice]->getDamage(), team_2[choice]->getPenetration(),
-                                team_2[choice]->getDamageType()
-                        );
-                        team_2[choice]->takeDamage(
-                                team_1[i]->getDamage(), team_1[i]->getPenetration(), team_1[i]->getDamageType()
-                        );
+
+            while(choice < 1 || choice > 3)
+            {
+                std::cout << "\n\nFor first team member no. " << i << ", for first team member no. " << choice
+                          << std::endl;
+                switch (choice) {
+                    case 1:
+                         ;
                         break;
+
+                    case 2:
+                        ;
+                        break;
+
+                    case 3:
+                        ;
+                        break;
+
+                    default: {
+                        ;
                     }
                 }
+
+//                ten if zostaje - wywalić cuurentId i wstawić tam cina(wybór użytkowanika)
+                if (stillAlive(team_1[i], team_2[choice])) {
+                    team_1[i]->takeDamage(
+                            team_2[choice]->getDamage(), team_2[choice]->getPenetration(),
+                            team_2[choice]->getDamageType()
+                    );
+                    team_2[choice]->takeDamage(
+                            team_1[i]->getDamage(), team_1[i]->getPenetration(), team_1[i]->getDamageType()
+                    );
+                }
+            }
+
 //            tutaj się to kończy; wywalić fora i wstawić couta i cina - później switcha i jeżeli w cin będzie jakieś gówno to atak na pierwszego.
         }
 

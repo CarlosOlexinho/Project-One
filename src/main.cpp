@@ -9,8 +9,7 @@
 #include "fight/AdvancedFightSimulator.hxx"
 #include "fight/ModernFightSimulator.hxx"
 
-int main(int argc, char** args)
-{
+int main(int argc, char **args) {
     /**
      *      TODO FIXME:
      *          Fix frostatronach regeneration speed! Dont let it regenerate over max health!
@@ -31,71 +30,70 @@ int main(int argc, char** args)
     int choice;
     int select;
 
-    ITeamCompositor * teamCompositor;
-    IFightSimulator * fightSimulator;
+    ITeamCompositor *teamCompositor;
+    IFightSimulator *fightSimulator;
 
-    while(choice != 1 && choice !=2)
-    {
+    while (choice != 1 && choice != 2) {
         std::cout << "Welcome in Fight Creator!" << std::endl;
         std::cout << "How do you wont to create team's?" << std::endl;
         std::cout << "1. By myself." << std::endl;
         std::cout << "2. Randomly." << std::endl;
         std::cin >> choice;
 
-        switch(choice)
-        {
+        switch (choice) {
             case 1:
                 teamCompositor = new TeamCompositor;
+                break;
             case 2:
                 teamCompositor = new RandomTeamCompositor;
-            default:
-            {
+                break;
+            default: {
                 std::cout << "Wrong option!" << std::endl;
             }
         }
-
+    }
+    while (select < 1 || select > 3) {
         std::cout << "Which Fight Simulator do you wont?" << std::endl;
         std::cout << "1. Fight  Simulator." << std::endl;
         std::cout << "2. Advanced Fight Simulator" << std::endl;
         std::cout << "3. Modern Fight Simulator" << std::endl;
         std::cin >> select;
 
-        switch(select)
-        {
+        switch (select) {
             case 1:
                 fightSimulator = new FightSimulator;
+                break;
             case 2:
                 fightSimulator = new AdvancedFightSimulator;
+                break;
             case 3:
                 fightSimulator = new ModernFightSimulator;
-            default:
-            {
+                break;
+            default: {
                 std::cout << "Wrong option!" << std::endl;
             }
-
         }
-        auto team_1 = teamCompositor
-                ->createTeam(teamCompositor->pickChampion(), teamCompositor->pickChampion(), teamCompositor->pickChampion());
-        auto team_2 = teamCompositor
-                ->createTeam(teamCompositor->pickChampion(), teamCompositor->pickChampion(), teamCompositor->pickChampion());
-
-        fightSimulator->acquireTeamsForFight(team_1, team_2);
-        auto victoriousTeam = fightSimulator->startBattle();
-
-        for(IUnit* victoriousMember : victoriousTeam)
-        {
-            if(victoriousMember->getHealth() > 0)
-            {
-                std::cout << victoriousMember->toString() << " says : " << victoriousMember->victorySpeech() << std::endl;
-            }
-            else
-            {
-                std::cout << victoriousMember->toString() << " says : " << victoriousMember->defeatSpeech() << std::endl;
-            }
-        }
-
-        teamCompositor->freeMemoryOutOfTeam(team_1);
-        teamCompositor->freeMemoryOutOfTeam(team_2);
     }
-        return 0;
+    auto team_1 = teamCompositor
+            ->createTeam(teamCompositor->pickChampion(), teamCompositor->pickChampion(),
+                         teamCompositor->pickChampion());
+    auto team_2 = teamCompositor
+            ->createTeam(teamCompositor->pickChampion(), teamCompositor->pickChampion(),
+                         teamCompositor->pickChampion());
+
+    fightSimulator->acquireTeamsForFight(team_1, team_2);
+    auto victoriousTeam = fightSimulator->startBattle();
+
+    for (IUnit *victoriousMember : victoriousTeam) {
+        if (victoriousMember->getHealth() > 0) {
+            std::cout << victoriousMember->toString() << " says : " << victoriousMember->victorySpeech() << std::endl;
+        } else {
+            std::cout << victoriousMember->toString() << " says : " << victoriousMember->defeatSpeech() << std::endl;
+        }
+    }
+
+    teamCompositor->freeMemoryOutOfTeam(team_1);
+    teamCompositor->freeMemoryOutOfTeam(team_2);
+
+    return 0;
 }
