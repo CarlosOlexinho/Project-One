@@ -9,113 +9,82 @@
 #include <iostream>
 #include <vector>
 
-void ModernFightSimulator::acquireTeamsForFight(std::vector<IUnit*> team_1, std::vector<IUnit*> team_2)
-{
+void ModernFightSimulator::acquireTeamsForFight(std::vector<IUnit *> team_1, std::vector<IUnit *> team_2) {
     std::cout << "team_1! team_2! Prepare for battle!!" << std::endl;
 
     this->team_2 = team_2;
     this->team_1 = team_1;
 }
 
-bool ModernFightSimulator::stillAlive(IUnit* One, IUnit* Two)
-{
-    if(One->getHealth() > 0 && Two->getHealth() > 0)
-    {
+bool ModernFightSimulator::stillAlive(IUnit *One, IUnit *Two) {
+    if (One->getHealth() > 0 && Two->getHealth() > 0) {
         std::cout << "They are alive" << std::endl;
         return true;
-    }
-    else
-    {
+    } else {
         std::cout << "One of them is dead" << std::endl;
         return false;
     }
 }
+
 //new fightSimulator -> powtórka z rozrywki -
-std::vector<IUnit* > ModernFightSimulator::startBattle()
-{
-
-    while(aliveMembers(team_1) > 0 && aliveMembers(team_2) > 0)
-    {
-        for (int i=0; i < team_1.size(); i++)
-        {
-
-//            tutaj zacząć implementację i to poniżej zastąpić w nowej klasie - tak aby można było wybrać prezciwnika
-                int choice;
-                std::cout << "Choose opponent!" << std::endl;
-                std::cout << "1. First member of team_2" << std::endl;
-                std::cout << "2. Second member of team_2" << std::endl;
-                std::cout << "3. Third member of team_2" << std::endl;
+std::vector<IUnit *> ModernFightSimulator::startBattle() {
+    while (aliveMembers(team_1) > 0 && aliveMembers(team_2) > 0) {
+        for (int i = 0; i < team_1.size(); i++) {
+            int choice;
+            std::cout << "Choose your opponent for " << team_1[i]->toString() << " with " << team_1[i]->getHealth() <<
+                      " HP " << std::endl;
+            std::cout << "1. First member of the team_2 -> " << team_2[0]->toString() <<
+                      " with " << team_2[0]->getHealth() << " HP " << std::endl;
+            std::cout << "2. Second member of the team_2 -> " << team_2[1]->toString() <<
+                      " HP " << team_2[1]->getHealth() << std::endl;
+            std::cout << "3. Third member of the team_2 -> " << team_2[2]->toString() <<
+                      " HP " << team_2[2]->getHealth() << std::endl;
+            do {
                 std::cin >> choice;
+            } while (choice < 1 || choice > 3);
+            choice--;
 
+            std::cout << "For first team member no. " << i << ", for second team member no. " << choice
+                      << std::endl;
 
-            while(choice < 1 || choice > 3)
-            {
-                std::cout << "\n\nFor first team member no. " << i << ", for first team member no. " << choice
-                          << std::endl;
-                switch (choice) {
-                    case 1:
-                         ;
-                        break;
-
-                    case 2:
-                        ;
-                        break;
-
-                    case 3:
-                        ;
-                        break;
-
-                    default: {
-                        ;
-                    }
-                }
-
-//                ten if zostaje - wywalić cuurentId i wstawić tam cina(wybór użytkowanika)
-                if (stillAlive(team_1[i], team_2[choice])) {
-                    team_1[i]->takeDamage(
-                            team_2[choice]->getDamage(), team_2[choice]->getPenetration(),
-                            team_2[choice]->getDamageType()
-                    );
-                    team_2[choice]->takeDamage(
-                            team_1[i]->getDamage(), team_1[i]->getPenetration(), team_1[i]->getDamageType()
-                    );
-                }
+            if (stillAlive(team_1[i], team_2[choice])) {
+                team_1[i]->takeDamage(team_2[choice]->getDamage(), team_2[choice]->getPenetration(),
+                                      team_2[choice]->getDamageType());
+                team_2[choice]->takeDamage(team_1[i]->getDamage(), team_1[i]->getPenetration(),
+                                           team_1[i]->getDamageType());
             }
-
-//            tutaj się to kończy; wywalić fora i wstawić couta i cina - później switcha i jeżeli w cin będzie jakieś gówno to atak na pierwszego.
         }
-
     }
 
-    if(aliveMembers(team_1) > aliveMembers(team_2))
+    if (aliveMembers(team_1) > aliveMembers(team_2))
     {
-        std::cout << std::endl << std::endl << "Team 1 won!" << std::endl;
+        std::cout << "Team_1 WON!" << std::endl;
         return team_1;
     }
-    else
-    if(aliveMembers(team_1) < aliveMembers(team_2) )
+    else if(aliveMembers(team_1) < aliveMembers(team_2))
     {
-        std::cout << std::endl << std::endl << "Team 2 won!" << std::endl;
+        std::cout << "Team_2 WON!" << std::endl;
         return team_2;
     }
-    else
-    {
-        std::cout << "There is nothing here!" << std::endl;
+    else {
+        std::cout << "It's a draw time!" << std::endl;
         return std::vector<IUnit*>();
     }
+
 }
-unsigned int ModernFightSimulator::aliveMembers(const std::vector<IUnit*>& team)
-{
+
+unsigned int ModernFightSimulator::aliveMembers(const std::vector<IUnit *> &team) {
     unsigned deadMembers = 0u;
-    for (auto member : team)
-    {
-        if (member->getHealth() <= 0)
-        {
+    for (auto member : team) {
+        if (member->getHealth() <= 0) {
             deadMembers++;
         }
     }
     return team.size() - deadMembers;
 }
 
-// kolejny fight simulator dający opcję wyboru ataku dla pierwszego członka zespołu pierwszego - drugi się tylko broni.
-//
+// nowe repo - cppNotes
+// każda notatka w nowym markdownie (zapewnić możliwość kożystania Wojtkowi - zgodnie z prawem polskim)
+// Rozpisać się na temat: variable(typy, przykłady użycia - kodzik)
+
+// nowy branch - i tam ma być czysty main. wymyślić własną grę -> przygotować nowe interfejsy - poczytać o GDD + przykłady kilku interfejsów

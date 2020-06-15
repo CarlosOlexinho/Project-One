@@ -27,13 +27,17 @@ int main(int argc, char **args) {
      *
      */
 // Wstawić tu menu wyboru dla symulatora i wyboru drużyny.
-    int choice;
-    int select;
+    int choice = 0;
+    int select = 0;
 
     ITeamCompositor *teamCompositor;
     IFightSimulator *fightSimulator;
 
-    while (choice != 1 && choice != 2) {
+//    *teamCompositor;
+//    (*teamCompositor).pickChampion();
+//    teamCompositor->pickChampion();
+
+    do {
         std::cout << "Welcome in Fight Creator!" << std::endl;
         std::cout << "How do you wont to create team's?" << std::endl;
         std::cout << "1. By myself." << std::endl;
@@ -51,8 +55,9 @@ int main(int argc, char **args) {
                 std::cout << "Wrong option!" << std::endl;
             }
         }
-    }
-    while (select < 1 || select > 3) {
+    } while (choice != 1 && choice != 2);
+
+    do {
         std::cout << "Which Fight Simulator do you wont?" << std::endl;
         std::cout << "1. Fight  Simulator." << std::endl;
         std::cout << "2. Advanced Fight Simulator" << std::endl;
@@ -73,7 +78,8 @@ int main(int argc, char **args) {
                 std::cout << "Wrong option!" << std::endl;
             }
         }
-    }
+    } while (select < 1 || select > 3);
+
     auto team_1 = teamCompositor
             ->createTeam(teamCompositor->pickChampion(), teamCompositor->pickChampion(),
                          teamCompositor->pickChampion());

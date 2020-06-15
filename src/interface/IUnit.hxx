@@ -9,7 +9,7 @@ struct IUnit
 {
     enum DamageType
     {
-        PhysicalDamage,
+        PhysicalDamage = 0,
         FireDamage,
         WaterDamage,
         WindDamage,
